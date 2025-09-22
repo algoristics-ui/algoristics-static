@@ -88,6 +88,20 @@ const DUMMY_USERS: User[] = [
     organization: 'City Community College',
   },
   {
+    id: '13',
+    name: 'City College Admin',
+    email: 'admin@citycollege.edu',
+    role: 'org_admin',
+    organization: 'City Community College',
+  },
+  {
+    id: '14',
+    name: 'TechCorp Admin',
+    email: 'admin@techcorp.com',
+    role: 'org_admin',
+    organization: 'TechCorp Training',
+  },
+  {
     id: '10',
     name: 'Algoristics Learner',
     email: 'learner@algoristics.com',

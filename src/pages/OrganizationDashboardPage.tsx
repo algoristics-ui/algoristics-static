@@ -17,7 +17,8 @@ import {
   BarChart3,
   ClipboardList,
   AlertCircle,
-  Megaphone
+  Megaphone,
+  UserCheck
 } from "lucide-react";
 import { OrganizationHeader } from "@/components/OrganizationHeader";
 import InstructorMobileBottomNav from "@/components/responsive/InstructorMobileBottomNav";
@@ -40,12 +41,21 @@ const OrganizationDashboardPage = () => {
       ];
     }
     
-    // Default admin stats
+    if (user?.role === 'org_admin') {
+      return [
+        { title: "Active Students", value: "12,500", icon: Users, color: orgData.primaryColor, change: "+8%" },
+        { title: "Total Courses", value: "120", icon: BookOpen, color: orgData.primaryColor, change: "+12%" },
+        { title: "Completion Rate", value: "89%", icon: TrendingUp, color: orgData.primaryColor, change: "+5%" },
+        { title: "Certificates Issued", value: "2,847", icon: Award, color: orgData.primaryColor, change: "+15%" }
+      ];
+    }
+    
+    // Default learner stats
     return [
-      { title: "Active Students", value: "12,500", icon: Users, color: orgData.primaryColor, change: "+8%" },
-      { title: "Total Courses", value: "120", icon: BookOpen, color: orgData.primaryColor, change: "+12%" },
-      { title: "Completion Rate", value: "89%", icon: TrendingUp, color: orgData.primaryColor, change: "+5%" },
-      { title: "Certificates Issued", value: "2,847", icon: Award, color: orgData.primaryColor, change: "+15%" }
+      { title: "Enrolled Courses", value: "8", icon: BookOpen, color: orgData.primaryColor, change: "+2%" },
+      { title: "Completed Courses", value: "3", icon: CheckCircle, color: orgData.primaryColor, change: "+1%" },
+      { title: "Certificates Earned", value: "2", icon: Award, color: orgData.primaryColor, change: "+1%" },
+      { title: "Study Progress", value: "67%", icon: TrendingUp, color: orgData.primaryColor, change: "+12%" }
     ];
   };
 
@@ -103,7 +113,57 @@ const OrganizationDashboardPage = () => {
       ];
     }
     
-    // Default admin news feed
+    if (user?.role === 'org_admin') {
+      return [
+        {
+          id: 1,
+          type: "system_alert",
+          title: "System Performance Report",
+          content: "Monthly system performance metrics are available. Platform uptime: 99.8%, user satisfaction: 4.7/5.",
+          priority: "medium",
+          date: "2024-03-15",
+          icon: BarChart3
+        },
+        {
+          id: 2,
+          type: "user_management",
+          title: "New Instructor Applications",
+          content: "5 new instructor applications pending review. Please review credentials and approve access.",
+          priority: "high",
+          date: "2024-03-14",
+          icon: UserCheck
+        },
+        {
+          id: 3,
+          type: "course_approval",
+          title: "Course Content Review",
+          content: "3 new courses awaiting admin approval before publication. Review content and learning objectives.",
+          priority: "high",
+          date: "2024-03-13",
+          icon: BookOpen
+        },
+        {
+          id: 4,
+          type: "analytics",
+          title: "Quarterly Analytics Ready",
+          content: "Q1 performance analytics available. Student engagement up 23%, course completion rate improved by 8%.",
+          priority: "medium",
+          date: "2024-03-10",
+          icon: TrendingUp
+        },
+        {
+          id: 5,
+          type: "budget",
+          title: "Budget Review Meeting",
+          content: "Quarterly budget review scheduled for March 25th. Prepare departmental expense reports.",
+          priority: "medium",
+          date: "2024-03-25",
+          icon: AlertCircle
+        }
+      ];
+    }
+    
+    // Default learner news feed
     return [
       {
         id: 1,
@@ -180,9 +240,16 @@ const OrganizationDashboardPage = () => {
       };
     }
     
+    if (user?.role === 'org_admin') {
+      return {
+        title: "Organization Admin Dashboard",
+        subtitle: "Manage your organization, courses, and oversee platform operations"
+      };
+    }
+    
     return {
-      title: "Dashboard Overview", 
-      subtitle: "Stay updated with the latest announcements and course information"
+      title: "Student Dashboard", 
+      subtitle: "Track your learning progress and explore new courses"
     };
   };
 

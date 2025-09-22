@@ -92,12 +92,12 @@ const OrganizationLoginPage = () => {
       techcorp: {
         learner: { email: 'trainee@techcorp.com', password: 'algoristic123', role: 'learner' },
         instructor: { email: 'mike@techcorp.com', password: 'algoristic123', role: 'instructor' },
-        org_admin: { email: 'alex@consultant.com', password: 'algoristic123', role: 'instructor' } // Multi-Org Instructor
+        org_admin: { email: 'admin@techcorp.com', password: 'algoristic123', role: 'org_admin' }
       },
       citycollege: {
         learner: { email: 'jane@citycollege.edu', password: 'algoristic123', role: 'learner' },
         instructor: { email: 'teacher@citycollege.edu', password: 'algoristic123', role: 'instructor' },
-        org_admin: { email: 'alex@consultant.com', password: 'algoristic123', role: 'instructor' } // Multi-Org Instructor
+        org_admin: { email: 'admin@citycollege.edu', password: 'algoristic123', role: 'org_admin' }
       },
       algoristics: {
         learner: { email: 'learner@algoristics.com', password: 'algoristic123', role: 'learner' },
@@ -298,9 +298,7 @@ const OrganizationLoginPage = () => {
                           )}
                           className="w-full p-2 text-left text-xs bg-white/50 hover:bg-white/70 border border-border/50 rounded-md transition-colors duration-200 hover:border-primary/50"
                         >
-                          <span className="font-medium text-primary">
-                            {orgData.acronym === 'techcorp' || orgData.acronym === 'citycollege' ? 'Multi-Org Instructor:' : 'Admin:'}
-                          </span>
+                          <span className="font-medium text-primary">Admin:</span>
                           <span className="ml-1 sm:ml-2 text-muted-foreground break-all">{demoCredentials.org_admin.email}</span>
                         </button>
                       </>

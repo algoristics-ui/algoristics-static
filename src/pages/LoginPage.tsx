@@ -73,7 +73,10 @@ const LoginPage = () => {
   const demoAccounts = [
     { email: "admin@algoristicedu.com", role: "Super Admin", org: "Algoristics", acronym: "algoristics", requiresOrg: false },
     { email: "sarah@university.edu", role: "Organization Admin", org: "Stanford University", acronym: "stanford", requiresOrg: true },
+    { email: "admin@techcorp.com", role: "Organization Admin", org: "TechCorp Training", acronym: "techcorp", requiresOrg: true },
+    { email: "admin@citycollege.edu", role: "Organization Admin", org: "City Community College", acronym: "citycollege", requiresOrg: true },
     { email: "mike@techcorp.com", role: "Instructor", org: "TechCorp Training", acronym: "techcorp", requiresOrg: true },
+    { email: "teacher@citycollege.edu", role: "Instructor", org: "City Community College", acronym: "citycollege", requiresOrg: true },
     { email: "emma@student.edu", role: "Learner", org: "Stanford University", acronym: "stanford", requiresOrg: true },
     { email: "jane@citycollege.edu", role: "Learner", org: "City Community College", acronym: "citycollege", requiresOrg: true },
     { email: "alex@consultant.com", role: "Instructor", org: "Any Organization", acronym: "multiple", requiresOrg: true },
