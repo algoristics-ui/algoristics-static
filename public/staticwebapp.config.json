@@ -1,0 +1,89 @@
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/images/*.{png,jpg,gif,svg,ico}",
+      "/css/*",
+      "/js/*",
+      "/assets/*",
+      "/api/*",
+      "*.{css,js,json,xml,ico,svg,png,jpg,gif,woff,woff2,ttf,eot}"
+    ]
+  },
+  "routes": [
+    {
+      "route": "/stanford/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/techcorp/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/citycollege/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/algoristics/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/dashboard/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/login",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/courses/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/analytics/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/users/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/organizations/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/reports/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/settings/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ],
+  "mimeTypes": {
+    ".json": "application/json",
+    ".js": "text/javascript",
+    ".css": "text/css",
+    ".html": "text/html",
+    ".svg": "image/svg+xml",
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".gif": "image/gif",
+    ".ico": "image/x-icon"
+  },
+  "defaultHeaders": {
+    "Cache-Control": "no-cache"
+  }
+}
